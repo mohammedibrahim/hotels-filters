@@ -131,18 +131,29 @@ class FilterRepository
     {
         foreach($this->data as $index =>$dataRow){
 
-            foreach($this->filters as $filter){
-
-                if(!$filter->filterData($dataRow)){
-
-                    unset($this->data[$index]);
-
-                    break;
-                }
-            }
+            $this->applyFilter($dataRow, $index);
         }
 
         return $this;
+    }
+
+    /**
+     * Apply Filter for each data row.
+     *
+     * @param $dataRow
+     * @param $index
+     */
+    public function applyFilter($dataRow, $index)
+    {
+        foreach($this->filters as $filter){
+
+            if(!$filter->filterData($dataRow)){
+
+                unset($this->data[$index]);
+
+                break;
+            }
+        }
     }
 
     /**
