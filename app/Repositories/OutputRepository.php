@@ -108,7 +108,7 @@ class OutputRepository
     public function getOutputFormatInstance($outputFormat): OutputContract
     {
         if (!isset($this->registeredOutputsKeys[$outputFormat])) {
-            throw new OutputFormatNotFoundException($outputFormat . ' not registered as a output format');
+            throw new OutputFormatNotFoundException($outputFormat . ' not registered as an output format');
         }
 
         return $this->registeredOutputsKeys[$outputFormat];

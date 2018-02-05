@@ -12,6 +12,7 @@
 namespace HotelsFilters\Filters;
 
 use HotelsFilters\Contracts\FiltersContracts\AbstractFilter;
+use HotelsFilters\Exceptions\BadInputFormat;
 
 /**
  * DestinationFilter
@@ -22,6 +23,24 @@ use HotelsFilters\Contracts\FiltersContracts\AbstractFilter;
 class DestinationFilter extends AbstractFilter
 {
     protected $filterName = 'destination';
+
+    /**
+     * Set Filter Value.
+     *
+     * @param $value
+     * @return $this
+     * @throws BadInputFormat
+     */
+    public function setFilterValue($value)
+    {
+        if(!is_string($value)){
+            throw new BadInputFormat('Destination format must be a string');
+        }
+
+        $this->filterValue = $value;
+
+        return $this;
+    }
 
     /**
      * Filter Data.

@@ -11,6 +11,8 @@
 
 namespace HotelsFilters\Contracts\SortingContacts;
 
+use HotelsFilters\Exceptions\BadInputFormat;
+
 
 /**
  * Abstract Order.
@@ -47,10 +49,15 @@ abstract class AbstractOrder implements OrderContract
      * Set Order Type.
      *
      * @param $orderType
-     * @return mixed
+     * @return $this
+     * @throws BadInputFormat
      */
     public function setOrderType($orderType)
     {
+        if(!in_array($orderType, ['asc', 'desc'])){
+            throw new BadInputFormat('Order type must equal to one of the following: asc, desc');
+        }
+
         $this->orderType = $orderType;
 
         return $this;

@@ -12,6 +12,7 @@
 namespace HotelsFilters\Filters;
 
 use HotelsFilters\Contracts\FiltersContracts\AbstractFilter;
+use HotelsFilters\Exceptions\BadInputFormat;
 
 /**
  * Date Range Filter
@@ -22,6 +23,28 @@ use HotelsFilters\Contracts\FiltersContracts\AbstractFilter;
 class DateRangeFilter extends AbstractFilter
 {
     protected $filterName = 'date_range';
+
+    /**
+     * Set Filter Value.
+     *
+     * @param $value
+     * @return $this
+     * @throws BadInputFormat
+     */
+    public function setFilterValue($value)
+    {
+        $regex = '/([0-9]{1,2}\-[0-9]{1,2}\-[0-9]{4})\:([0-9]{1,2}\-[0-9]{1,2}\-[0-9]{4})/';
+
+        preg_match($regex, $value,$matches);
+
+        if(count($matches) !== 3){
+            throw new BadInputFormat('Date Range format must be dd-mm-YYYY:dd-mm-YYYY');
+        }
+
+        $this->filterValue = $value;
+
+        return $this;
+    }
 
     /**
      * Filter Data.

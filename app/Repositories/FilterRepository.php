@@ -124,6 +124,8 @@ class FilterRepository
 
     /**
      * Apply filters.
+     *
+     * @return FilterRepository
      */
     public function applyFilters(): self
     {

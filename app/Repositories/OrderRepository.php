@@ -116,7 +116,7 @@ class OrderRepository
     public function getOrderInstance($order): OrderContract
     {
         if (!isset($this->registeredOrdersKeys[$order])) {
-            throw new OrderNotFoundException($order . ' not registered as a order');
+            throw new OrderNotFoundException($order . ' not registered as an order');
         }
 
         return $this->registeredOrdersKeys[$order];

@@ -12,6 +12,7 @@
 namespace HotelsFilters\Filters;
 
 use HotelsFilters\Contracts\FiltersContracts\AbstractFilter;
+use HotelsFilters\Exceptions\BadInputFormat;
 
 /**
  * Price Range Filter.
@@ -22,6 +23,28 @@ use HotelsFilters\Contracts\FiltersContracts\AbstractFilter;
 class PriceRangeFilter extends AbstractFilter
 {
     protected $filterName = 'price_range';
+
+    /**
+     * Set Filter Value.
+     *
+     * @param $value
+     * @return $this
+     * @throws BadInputFormat
+     */
+    public function setFilterValue($value)
+    {
+        $regex = '/([0-9]+)\:([0-9]+)/';
+
+        preg_match($regex, $value,$matches);
+
+        if(count($matches) !== 3){
+            throw new BadInputFormat('Price Range format must be 00:00');
+        }
+
+        $this->filterValue = $value;
+
+        return $this;
+    }
 
     /**
      * Filter Data.

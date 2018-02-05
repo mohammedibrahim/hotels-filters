@@ -30,17 +30,4 @@ abstract class AbstractFilter implements FilterContract
     {
         return $this->filterName;
     }
-
-    /**
-     * Set Filter Value.
-     *
-     * @param $value
-     * @return $this
-     */
-    public function setFilterValue($value)
-    {
-        $this->filterValue = $value;
-
-        return $this;
-    }
 }
