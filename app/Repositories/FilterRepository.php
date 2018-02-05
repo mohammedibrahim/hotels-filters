@@ -129,28 +129,18 @@ class FilterRepository
      */
     public function applyFilters(): self
     {
-        $filteredData = [];
-
-        foreach($this->data as $dataRow){
-
-            $addToFiltered = true;
+        foreach($this->data as $index =>$dataRow){
 
             foreach($this->filters as $filter){
 
                 if(!$filter->filterData($dataRow)){
 
-                    $addToFiltered = false;
+                    unset($this->data[$index]);
 
                     break;
                 }
             }
-
-            if($addToFiltered){
-                $filteredData[] = $dataRow;
-            }
         }
-
-        $this->data = $filteredData;
 
         return $this;
     }

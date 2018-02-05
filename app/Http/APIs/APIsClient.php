@@ -41,13 +41,15 @@ class APIsClient
      *
      * @var string
      */
-    protected $url = 'https://api.myjson.com/bins/tl0bp';
+    protected $url;
 
     /**
      * APIsClient constructor.
      */
-    public function __construct()
+    public function __construct($url = 'https://api.myjson.com/bins/tl0bp')
     {
+        $this->url = $url;
+
         $this->client = new Client();
     }
 

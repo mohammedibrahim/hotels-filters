@@ -10,6 +10,8 @@
 
 namespace HotelsUnitTest\Coverage;
 
+use HotelsFilters\Exceptions\APIClientRequestException;
+use HotelsFilters\Http\APIs\APIsClient;
 use PHPUnit\Framework\TestCase;
 use HotelsFilters\Http\Request;
 
@@ -307,5 +309,17 @@ class CoverageTest extends TestCase
         $errorMessage = json_decode($response, 1)['error'];
 
         $this->assertEquals($wrongFormat.' not registered as an output format', $errorMessage);
+    }
+
+    /**
+     * Test if we used wrong api url it will return exception.
+     */
+    public function test_api_client_wrong_url()
+    {
+        $this->expectException(APIClientRequestException::class);
+
+        $apiClient = new APIsClient('wrong-url');
+
+        $apiClient->request();
     }
 }
