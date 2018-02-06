@@ -57,7 +57,7 @@ Lets assume that your installation has http://localhost/hotels-filters as url an
 
 #### List All Hotels
 ``
-GET http://localhost/hotels-filtes
+GET http://localhost/hotels-filters
 ``
 ##### Response
 ```json
@@ -193,7 +193,7 @@ Data can be filtered by one or more filters as follow
 | date_range  | String  | Filter hotels which has a availablitiy in the specified date range. | Null | filters[date_range]=10-10-2020:15-10-2020 |
 
 ``
-GET http://localhost/hotels-filtes?filters[hotel_name]=Concorde
+GET http://localhost/hotels-filters?filters[hotel_name]=Concorde
 ``
 
 ##### Response
@@ -233,7 +233,7 @@ Data can be ordered by name or value as follow
 | price  | String  | Order hotels by price. | asc | order_by=price&order_type=desc |
 
 ``
-GET http://localhost/hotels-filtes?order_by=name&order_type=desc
+GET http://localhost/hotels-filters?order_by=name&order_type=desc
 ``
 
 ##### Response
@@ -367,7 +367,7 @@ Output format available for one echoing data
 | json  | show results in output format. | json | output_format=json |
 
 ``
-GET http://localhost/hotels-filtes?output_format=json
+GET http://localhost/hotels-filters?output_format=json
 ``
 
 ##### Response
@@ -502,7 +502,7 @@ Application allows you to add new filter.
 #### Go to 
 
 ```
-hotels-filtes -> app -> filters
+hotels-filters -> app -> filters
 ```
 
 #### Create a new class
@@ -540,7 +540,7 @@ class NewFilterClass extends AbstractFilter
 #### Go to 
 
 ```
-hotels-filtes -> app -> Repositories
+hotels-filters -> app -> Repositories
 ```
 #### Edit FilterRepository.php
 
@@ -560,7 +560,7 @@ class FilterRepository
 #### To use the new filter
 
 ``
-GET http://localhost/hotels-filtes?filters[new_filter_name]=value
+GET http://localhost/hotels-filters?filters[new_filter_name]=value
 ``
 
 ## New Order
@@ -569,7 +569,7 @@ You may want to order data by new custom field than the defaults.
 #### Go to 
 
 ```
-hotels-filtes -> app -> orders
+hotels-filters -> app -> orders
 ```
 
 #### Create a new class
@@ -598,7 +598,7 @@ class NewFieldOrder extends AbstractOrder
 #### Go to 
 
 ```
-hotels-filtes -> app -> Repositories
+hotels-filters -> app -> Repositories
 ```
 #### Edit OrderRepository.php
 
@@ -616,7 +616,7 @@ class OrderRepository
 #### To use the new order
 
 ``
-GET http://localhost/hotels-filtes?order_by=new_order_field&order_type=asc
+GET http://localhost/hotels-filters?order_by=new_order_field&order_type=asc
 ``
 
 ## New Output format
@@ -625,7 +625,7 @@ Create New output format like html format or xml default is json.
 #### Go to 
 
 ```
-hotels-filtes -> app -> Output
+hotels-filters -> app -> Output
 ```
 
 #### Create a new class
@@ -662,7 +662,7 @@ class HtmlOutput extends AbstractOutputFormat
 #### Go to 
 
 ```
-hotels-filtes -> app -> Repositories
+hotels-filters -> app -> Repositories
 ```
 #### Edit OutputRepository.php
 
@@ -680,7 +680,7 @@ class OutputRepository
 #### To use the new output format
 
 ``
-GET http://localhost/hotels-filtes?output_format=html
+GET http://localhost/hotels-filters?output_format=html
 ``
 
 ## PHP Docs
