@@ -25,6 +25,16 @@ use HotelsFilters\Orders\PriceOrder;
 class OrderRepository
 {
     /**
+     * Registered Orders.
+     *
+     * @var array
+     */
+    protected $registeredOrders = [
+        NameOrder::class,
+        PriceOrder::class,
+    ];
+
+    /**
      * Order Array.
      *
      * @var array
@@ -47,6 +57,8 @@ class OrderRepository
 
     /**
      * OrderRepository constructor.
+     *
+     * @param $data
      */
     public function __construct($data)
     {
@@ -81,10 +93,7 @@ class OrderRepository
      */
     public function getRegisteredOrders(): array
     {
-        return [
-            NameOrder::class,
-            PriceOrder::class,
-        ];
+        return $this->registeredOrders;
     }
 
     /**

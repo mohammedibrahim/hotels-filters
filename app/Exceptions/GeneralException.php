@@ -20,5 +20,10 @@ namespace HotelsFilters\Exceptions;
  */
 class GeneralException extends \Exception
 {
+    /**
+     * Error code
+     *
+     * @var int
+     */
     protected $code = 400;
 }

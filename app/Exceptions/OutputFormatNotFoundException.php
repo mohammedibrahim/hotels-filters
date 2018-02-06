@@ -20,6 +20,11 @@ namespace HotelsFilters\Exceptions;
  */
 class OutputFormatNotFoundException extends \Exception
 {
+    /**
+     * Error code
+     *
+     * @var int
+     */
     protected $code = 422;
 
 }

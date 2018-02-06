@@ -23,6 +23,9 @@ use HotelsFilters\Output\JsonOutput;
  */
 class OutputRepository
 {
+    protected $registeredOutputFormats = [
+        JsonOutput::class
+    ];
     /**
      * OutputFormat Array.
      *
@@ -30,6 +33,11 @@ class OutputRepository
      */
     protected $outputFormat = 'json';
 
+    /**
+     * Output Format Instance.
+     *
+     * @var OutputContract
+     */
     protected $outputFormatInstance;
 
     /**
@@ -54,8 +62,6 @@ class OutputRepository
 
         $this->outputFormatInstance->setData($data);
     }
-
-
 
     /**
      * Get Registered Orders Names.
@@ -83,9 +89,7 @@ class OutputRepository
      */
     public function getRegisteredOutputFormats(): array
     {
-        return [
-            JsonOutput::class
-        ];
+        return $this->registeredOutputFormats;
     }
 
     /**

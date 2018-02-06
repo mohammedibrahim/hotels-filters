@@ -21,9 +21,16 @@ use HotelsFilters\Contracts\OutputFormat\AbstractOutputFormat;
  */
 class JsonOutput extends AbstractOutputFormat
 {
+    /**
+     * Format Name.
+     *
+     * @var string
+     */
     protected $formatName = 'json';
 
     /**
+     * Output Method.
+     *
      * @return string
      */
     public function output(): string

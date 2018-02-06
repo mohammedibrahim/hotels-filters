@@ -37,6 +37,7 @@ abstract class AbstractOrder implements OrderContract
     protected $orderType = 'asc';
 
     /**
+     * Get Order Name.
      *
      * @return string
      */

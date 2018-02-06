@@ -22,10 +22,27 @@ use HotelsFilters\Repositories\OutputRepository;
  */
 class Response
 {
+    /**
+     * Response Data.
+     *
+     * @var array
+     */
     protected $responseData;
 
+    /**
+     * Output Repo.
+     *
+     * @var OutputRepository
+     */
     protected $outputRepo;
 
+    /**
+     * Response constructor.
+     *
+     * @param $data
+     * @param $outputFormat
+     * @param int $responseCode
+     */
     public function __construct($data, $outputFormat, $responseCode = 200)
     {
         try{

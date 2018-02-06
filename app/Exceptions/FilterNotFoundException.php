@@ -19,5 +19,10 @@ namespace HotelsFilters\Exceptions;
  */
 class FilterNotFoundException extends \Exception
 {
+    /**
+     * Error code
+     *
+     * @var int
+     */
     protected $code = 422;
 }

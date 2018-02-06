@@ -22,6 +22,11 @@ use HotelsFilters\Exceptions\BadInputFormat;
  */
 class DateRangeFilter extends AbstractFilter
 {
+    /**
+     * Filter Name.
+     *
+     * @var string
+     */
     protected $filterName = 'date_range';
 
     /**

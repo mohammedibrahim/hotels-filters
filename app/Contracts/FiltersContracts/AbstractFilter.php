@@ -19,11 +19,22 @@ namespace HotelsFilters\Contracts\FiltersContracts;
  */
 abstract class AbstractFilter implements FilterContract
 {
+    /**
+     * Filter Name.
+     *
+     * @var string
+     */
     protected $filterName = '';
 
+    /**
+     * Filter Value.
+     *
+     * @var string
+     */
     protected $filterValue = '';
 
     /**
+     * Get Filter Name.
      * @return string
      */
     public function getFilterName(): string

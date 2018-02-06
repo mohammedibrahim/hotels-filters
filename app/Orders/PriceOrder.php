@@ -21,6 +21,11 @@ use HotelsFilters\Contracts\SortingContacts\AbstractOrder;
  */
 class PriceOrder extends AbstractOrder
 {
+    /**
+     * Order Name.
+     *
+     * @var string
+     */
     protected $orderName = 'price';
 
     /**

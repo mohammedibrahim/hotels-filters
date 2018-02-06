@@ -22,6 +22,11 @@ use HotelsFilters\Exceptions\BadInputFormat;
  */
 class PriceRangeFilter extends AbstractFilter
 {
+    /**
+     * Filter Name.
+     *
+     * @var string
+     */
     protected $filterName = 'price_range';
 
     /**

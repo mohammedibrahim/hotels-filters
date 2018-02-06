@@ -22,6 +22,11 @@ use HotelsFilters\Exceptions\BadInputFormat;
  */
 class DestinationFilter extends AbstractFilter
 {
+    /**
+     * Filter Name.
+     *
+     * @var string
+     */
     protected $filterName = 'destination';
 
     /**

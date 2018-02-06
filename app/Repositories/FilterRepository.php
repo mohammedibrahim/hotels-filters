@@ -26,6 +26,13 @@ use HotelsFilters\Filters\PriceRangeFilter;
  */
 class FilterRepository
 {
+    protected $registeredFilters = [
+        DateRangeFilter::class,
+        DestinationFilter::class,
+        HotelNameFilter::class,
+        PriceRangeFilter::class
+    ];
+
     /**
      * Filters Array.
      * @var array
@@ -47,6 +54,8 @@ class FilterRepository
 
     /**
      * FilterRepository constructor.
+     *
+     * @param $data
      */
     public function __construct($data)
     {
@@ -81,19 +90,15 @@ class FilterRepository
      */
     public function getRegisteredFilters(): array
     {
-        return [
-            DateRangeFilter::class,
-            DestinationFilter::class,
-            HotelNameFilter::class,
-            PriceRangeFilter::class
-        ];
+        return $this->registeredFilters;
     }
 
     /**
      * Add Filter.
      *
-     * @param FilterContract $filter
-     * @return object
+     * @param $filter
+     * @param $value
+     * @return FilterRepository
      */
     public function addFilter($filter, $value): self
     {

@@ -45,6 +45,8 @@ class APIsClient
 
     /**
      * APIsClient constructor.
+     *
+     * @param string $url
      */
     public function __construct($url = 'https://api.myjson.com/bins/tl0bp')
     {
