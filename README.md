@@ -688,7 +688,7 @@ GET http://localhost/hotels-filters?output_format=html
 At app root directory Run
 
 ```bash
-php vendor/bin/phpdoc -d app/ -t docs --title="Boarding Cards Sorter"
+php vendor/bin/phpdoc -d app/ -t docs --title="Hotels Filters"
 ```
 
 ## Test Cases
