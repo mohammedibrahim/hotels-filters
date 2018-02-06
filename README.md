@@ -32,7 +32,9 @@ An application (console or RESTful API) that allow search in the given inventory
 - Destination [City]
 - Price range [ex: $100:$200]
 - Date range [ex: 10-10-2020:15-10-2020]
+
 And allow sorting by:
+
 - Hotel Name
 - Price
 
