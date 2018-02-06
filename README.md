@@ -494,7 +494,7 @@ GET http://localhost/hotels-filters?output_format=json
 
 ## Console
 
-In development progress.
+Under development.
 
 ## New Filter
 Application allows you to add new filter.
@@ -690,6 +690,8 @@ At app root directory Run
 ```bash
 php vendor/bin/phpdoc -d app/ -t docs --title="Hotels Filters"
 ```
+In development progress.
+
 
 ## Test Cases
 
