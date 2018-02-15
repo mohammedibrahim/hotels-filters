@@ -6,6 +6,9 @@ Web service to filter a list of hotels.
 <a href="https://travis-ci.org/mohammedibrahim/hotels-filters/"><img src="https://travis-ci.org/mohammedibrahim/hotels-filters.svg?branch=master" /></a>
 <a href="https://codeclimate.com/github/mohammedibrahim/hotels-filters/maintainability"><img src="https://api.codeclimate.com/v1/badges/43cd3f6c1d478430c9b4/maintainability" /></a>
 <a href="https://codeclimate.com/github/mohammedibrahim/hotels-filters/test_coverage"><img src="https://api.codeclimate.com/v1/badges/43cd3f6c1d478430c9b4/test_coverage" /></a>
+<a href="https://codecov.io/gh/mohammedibrahim/hotels-filters">
+  <img src="https://codecov.io/gh/mohammedibrahim/hotels-filters/branch/master/graph/badge.svg" />
+</a>
 </p>
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
