@@ -21,6 +21,7 @@
     ],
     "require": {
         "phpunit/php-code-coverage": "^5.3",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "php-di/php-di": "^5.4"
     }
 }
