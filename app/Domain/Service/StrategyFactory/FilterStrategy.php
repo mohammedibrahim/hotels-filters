@@ -25,6 +25,11 @@ use HotelsFilters\Domain\Filters\PriceRangeFilter;
  */
 class FilterStrategy extends AbstractStrategy
 {
+    /**
+     * Registered Filters.
+     *
+     * @var array
+     */
     protected $registeredFilters = [
         DateRangeFilter::class,
         DestinationFilter::class,

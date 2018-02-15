@@ -67,9 +67,10 @@ class Response
     }
 
     /**
-     * Output Result
+     * Output Result.
      *
-     * @return array|string
+     * @return mixed
+     * @throws \HotelsFilters\Domain\Exceptions\OutputFormatNotFoundException
      */
     public function output()
     {
@@ -91,6 +92,8 @@ class Response
     }
 
     /**
+     * Set Data.
+     *
      * @param $data
      * @return Response
      */
@@ -102,6 +105,8 @@ class Response
     }
 
     /**
+     * Set Output format.
+     *
      * @param string $outputFormat
      * @return Response
      */
@@ -113,6 +118,8 @@ class Response
     }
 
     /**
+     * Set Response Code.
+     *
      * @param int $responseCode
      * @return Response
      */

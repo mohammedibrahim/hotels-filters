@@ -46,6 +46,9 @@ class OutputStrategy extends AbstractStrategy
      */
     protected $registeredOutputsKeys = [];
 
+    /**
+     * OutputStrategy constructor.
+     */
     public function __construct()
     {
         $this->getRegisteredOutputsNames();

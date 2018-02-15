@@ -22,8 +22,19 @@ use HotelsFilters\Domain\Entity\Hotel;
  */
 class DataMapper
 {
+    /**
+     * Entity Class
+     *
+     * @var string
+     */
     protected $entityClass = Hotel::class;
 
+    /**
+     * Hydrate Data.
+     *
+     * @param $data
+     * @return EntityContract
+     */
     public function hydrate($data): EntityContract
     {
         $entity = new $this->entityClass;
@@ -36,6 +47,12 @@ class DataMapper
         return $entity;
     }
 
+    /**
+     * Extract Data to array.
+     *
+     * @param EntityContract $hotelEntity
+     * @return array
+     */
     public function extract(EntityContract $hotelEntity): array
     {
         $data = [

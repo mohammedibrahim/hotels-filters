@@ -24,6 +24,7 @@ class FilterService
 {
     /**
      * Filters Array.
+     *
      * @var array
      */
     protected $filters = [];
@@ -36,6 +37,8 @@ class FilterService
     protected $data = [];
 
     /**
+     * Filter Strategy.
+     *
      * @var AbstractStrategy
      */
     protected $filterStrategy;
@@ -43,7 +46,6 @@ class FilterService
     /**
      * FilterService constructor.
      *
-
      * @param FilterStrategy $filterStrategy
      */
     public function __construct(FilterStrategy $filterStrategy)

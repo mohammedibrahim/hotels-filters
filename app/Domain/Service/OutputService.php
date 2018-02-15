@@ -31,6 +31,8 @@ class OutputService
     protected $outputFormat = 'json';
 
     /**
+     * Output Strategy.
+     *
      * @var AbstractStrategy
      */
     protected $outputStrategy;

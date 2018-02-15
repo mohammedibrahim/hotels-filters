@@ -38,15 +38,15 @@ class OrderService
     protected $order = 'name';
 
     /**
+     * Order Strategy.
+     *
      * @var AbstractStrategy
      */
     protected $orderStrategy;
 
-
-
     /**
      * OrderService constructor.
-     * @param $data
+     *
      * @param OrderStrategy $orderStrategy
      */
     public function __construct(OrderStrategy $orderStrategy)

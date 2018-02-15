@@ -50,6 +50,8 @@ class Hotel extends AbstractEntity {
     protected $availability;
 
     /**
+     * Set Name.
+     *
      * @param mixed $name
      */
     public function setName($name): void
@@ -58,6 +60,8 @@ class Hotel extends AbstractEntity {
     }
 
     /**
+     * Get Name.
+     *
      * @return mixed
      */
     public function getName()
@@ -66,6 +70,8 @@ class Hotel extends AbstractEntity {
     }
 
     /**
+     * Get Price.
+     *
      * @return mixed
      */
     public function getPrice()
@@ -74,6 +80,8 @@ class Hotel extends AbstractEntity {
     }
 
     /**
+     * Set Price.
+     *
      * @param mixed $price
      */
     public function setPrice($price): void
@@ -82,6 +90,8 @@ class Hotel extends AbstractEntity {
     }
 
     /**
+     * Get City.
+     *
      * @return mixed
      */
     public function getCity()
@@ -90,6 +100,8 @@ class Hotel extends AbstractEntity {
     }
 
     /**
+     * Set City.
+     *
      * @param mixed $city
      */
     public function setCity($city): void
@@ -98,6 +110,8 @@ class Hotel extends AbstractEntity {
     }
 
     /**
+     * Get Availability.
+     *
      * @return mixed
      */
     public function getAvailability()
@@ -106,6 +120,8 @@ class Hotel extends AbstractEntity {
     }
 
     /**
+     * Set Availability.
+     *
      * @param mixed $availability
      */
     public function setAvailability($availability): void

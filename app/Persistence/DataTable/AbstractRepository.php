@@ -61,6 +61,8 @@ class AbstractRepository implements RepositoryContract
     protected $orderService;
 
     /**
+     * Data.
+     *
      * @var
      */
     protected $data = [];
@@ -86,6 +88,11 @@ class AbstractRepository implements RepositoryContract
         $this->init();
     }
 
+    /**
+     * Initialize Request.
+     *
+     * @throws \HotelsFilters\Domain\Exceptions\APIClientRequestException
+     */
     public function init()
     {
         $this->data = json_decode($this->gateway->request()->getResponse(), 1)['hotels'];
