@@ -504,7 +504,7 @@ Application allows you to add new filter.
 #### Go to 
 
 ```
-hotels-filters -> app -> Doamin -> Filters
+hotels-filters -> app -> Domain -> Filters
 ```
 
 #### Create a new class
