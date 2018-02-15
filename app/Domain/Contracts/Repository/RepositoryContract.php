@@ -11,7 +11,6 @@
 
 namespace HotelsFilters\Domain\Contracts\Repository;
 
-use HotelsFilters\Domain\Contracts\Entity\EntityContract;
 
 /**
  * Main Repository
@@ -22,17 +21,10 @@ use HotelsFilters\Domain\Contracts\Entity\EntityContract;
 interface RepositoryContract
 {
     /**
-     * Get All Data
-     *
-     * @return mixed
-     */
-    public function all(): RepositoryContract;
-
-    /**
      * Conditions
      *
      * @param array $conditions
-     * @return EntityContract
+     * @return RepositoryContract
      */
     public function where(array $conditions): RepositoryContract;
 
@@ -41,7 +33,7 @@ interface RepositoryContract
      *
      * @param $orderBy
      * @param $orderType
-     * @return EntityContract
+     * @return RepositoryContract
      */
     public function order(string $orderBy,string $orderType): RepositoryContract;
 

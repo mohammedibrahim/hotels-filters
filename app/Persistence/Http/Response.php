@@ -74,7 +74,6 @@ class Response
     public function output()
     {
         try{
-
             $format = $this->outputService->getOutputFormat($this->outputFormat)->setData($this->data);
 
             http_response_code($this->responseCode);
@@ -103,14 +102,6 @@ class Response
     }
 
     /**
-     * @return mixed
-     */
-    public function getData()
-    {
-        return $this->data;
-    }
-
-    /**
      * @param string $outputFormat
      * @return Response
      */
@@ -122,14 +113,6 @@ class Response
     }
 
     /**
-     * @return string
-     */
-    public function getOutputFormat(): string
-    {
-        return $this->outputFormat;
-    }
-
-    /**
      * @param int $responseCode
      * @return Response
      */
@@ -138,14 +121,6 @@ class Response
         $this->responseCode = $responseCode;
 
         return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getResponseCode(): int
-    {
-        return $this->responseCode;
     }
 
 }

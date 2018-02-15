@@ -16,13 +16,11 @@ error_reporting(E_ALL);
 
 use HotelsFilters\Persistence\Http\HotelController;
 
-
-
 $containerBuilder = new \DI\ContainerBuilder();
 
 $containerBuilder->addDefinitions('config.php');
 
 $container = $containerBuilder->build();
 
-$userManager = $container->get(HotelController::class);
+$container->get(HotelController::class);
 

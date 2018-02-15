@@ -30,8 +30,6 @@ class OutputService
      */
     protected $outputFormat = 'json';
 
-    protected $data;
-
     /**
      * @var AbstractStrategy
      */
@@ -57,18 +55,4 @@ class OutputService
     {
         return $this->outputStrategy->getOutputFormatInstance($outputFormat);
     }
-
-    /**
-     * Set Data.
-     *
-     * @param $data
-     * @return OutputService
-     */
-    public function setData($data): self
-    {
-        $this->data = $data;
-
-        return $this;
-    }
-
 }

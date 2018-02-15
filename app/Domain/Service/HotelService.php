@@ -19,36 +19,5 @@ namespace HotelsFilters\Domain\Service;
  */
 class HotelService
 {
-    /**
-     * Data.
-     *
-     * @var
-     */
-    protected $data = [];
 
-    public function __construct()
-    {}
-
-    /**
-     * Get Data.
-     *
-     * @return array
-     */
-    public function getData(): array
-    {
-        return $this->data;
-    }
-
-    /**
-     * Set Data.
-     *
-     * @param $data
-     * @return HotelService
-     */
-    public function setData($data): self
-    {
-        $this->data = $data;
-
-        return $this;
-    }
 }

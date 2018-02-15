@@ -10,10 +10,10 @@
 
 namespace HotelsUnitTest\Coverage;
 
-use HotelsFilters\Exceptions\APIClientRequestException;
-use HotelsFilters\Http\APIs\APIsClient;
+use HotelsFilters\Domain\Exceptions\APIClientRequestException;
+use HotelsFilters\Persistence\Gateway\APIs\APIsClient;
+use HotelsFilters\Persistence\Http\HotelController;
 use PHPUnit\Framework\TestCase;
-use HotelsFilters\Http\Request;
 
 /**
  * Coverage Test case.
@@ -24,11 +24,24 @@ use HotelsFilters\Http\Request;
 class CoverageTest extends TestCase
 {
     /**
+     * Container.
+     *
+     * @var
+     */
+    protected $container;
+
+    /**
      * Set up
      */
     public function setUp()
     {
         $_GET = [];
+
+        $containerBuilder = new \DI\ContainerBuilder();
+
+        $containerBuilder->addDefinitions('config.php');
+
+        $this->container = $containerBuilder->build();
     }
 
     /**
@@ -48,7 +61,7 @@ class CoverageTest extends TestCase
         $_GET['order_type'] = 'desc';
         $_GET['output_format'] = 'json';
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -68,7 +81,7 @@ class CoverageTest extends TestCase
 
         $_GET['order_type'] = 'asc';
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -88,7 +101,7 @@ class CoverageTest extends TestCase
             'date_range' => '5-10-2020:10-11-2050'
         ];
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -98,7 +111,7 @@ class CoverageTest extends TestCase
     }
 
     /**
-     * Not exsit data with destination filter.
+     * Not exit data with destination filter.
      */
     public function test_not_exist_data_for_destination()
     {
@@ -108,7 +121,7 @@ class CoverageTest extends TestCase
             'destination' => 'Ca'
         ];
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -130,7 +143,7 @@ class CoverageTest extends TestCase
 
         ob_start();
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -154,7 +167,7 @@ class CoverageTest extends TestCase
 
         ob_start();
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -178,7 +191,7 @@ class CoverageTest extends TestCase
 
         ob_start();
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -202,7 +215,7 @@ class CoverageTest extends TestCase
 
         ob_start();
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -226,7 +239,7 @@ class CoverageTest extends TestCase
 
         ob_start();
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -250,7 +263,7 @@ class CoverageTest extends TestCase
 
         ob_start();
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -274,7 +287,7 @@ class CoverageTest extends TestCase
 
         ob_start();
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 
@@ -298,7 +311,7 @@ class CoverageTest extends TestCase
 
         ob_start();
 
-        new Request();
+        $this->container->get(HotelController::class);
 
         $response = ob_get_contents();
 

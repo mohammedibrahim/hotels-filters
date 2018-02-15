@@ -37,7 +37,7 @@ class APITest extends TestCase
      * API Url.
      * @var string
      */
-    protected $url = 'http://localhost';
+    protected $url = 'http://192.168.2.9/hotels-filters/index.php';
 
     /**
      * Setup

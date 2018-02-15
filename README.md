@@ -504,7 +504,7 @@ Application allows you to add new filter.
 #### Go to 
 
 ```
-hotels-filters -> app -> filters
+hotels-filters -> app -> Doamin -> Filters
 ```
 
 #### Create a new class
@@ -514,7 +514,7 @@ hotels-filters -> app -> filters
 
 namespace HotelsFilters\Filters;
 
-use HotelsFilters\Contracts\FiltersContracts\AbstractFilter;
+use HotelsFilters\Domain\Contracts\FiltersContracts\AbstractFilter;
 
 class NewFilterClass extends AbstractFilter
 {
@@ -537,18 +537,18 @@ class NewFilterClass extends AbstractFilter
 }
 ```
 
-##### Register the new class in FilterRepository
+##### Register the new class in FilterStrategy
 
 #### Go to 
 
 ```
-hotels-filters -> app -> Repositories
+hotels-filters -> app -> Domain -> Service -> Strategy Factory -> FilterStrategoy
 ```
-#### Edit FilterRepository.php
+#### Edit FilterStrategy.php
 
 ```php
 <?php
-class FilterRepository
+class FilterStrategy
 {
     protected $registeredFilters = [
         DateRangeFilter::class,
@@ -571,13 +571,17 @@ You may want to order data by new custom field than the defaults.
 #### Go to 
 
 ```
-hotels-filters -> app -> orders
+hotels-filters -> app -> Domain -> Orders
 ```
 
 #### Create a new class
 
 ```php
 <?php
+
+namespace HotelsFilters\Output;
+
+use HotelsFilters\Domain\Orders\AbstractOrder;
 /**
  * Order By New Order field.
  *
@@ -600,13 +604,13 @@ class NewFieldOrder extends AbstractOrder
 #### Go to 
 
 ```
-hotels-filters -> app -> Repositories
+hotels-filters -> app -> Domain -> Service -> Strategy Factory -> OrderStrategoy
 ```
-#### Edit OrderRepository.php
+#### Edit OrderStrategy.php
 
 ```php
 <?php
-class OrderRepository
+class OrderStrategy
 {
     protected $registeredOrders = [
         NameOrder::class,
@@ -627,7 +631,7 @@ Create New output format like html format or xml default is json.
 #### Go to 
 
 ```
-hotels-filters -> app -> Output
+hotels-filters -> app -> Domain -> Output
 ```
 
 #### Create a new class
@@ -637,7 +641,7 @@ hotels-filters -> app -> Output
 
 namespace HotelsFilters\Output;
 
-use HotelsFilters\Contracts\OutputFormat\AbstractOutputFormat;
+use HotelsFilters\Domain\Contracts\OutputFormat\AbstractOutputFormat;
 
 class HtmlOutput extends AbstractOutputFormat
 {
@@ -664,14 +668,14 @@ class HtmlOutput extends AbstractOutputFormat
 #### Go to 
 
 ```
-hotels-filters -> app -> Repositories
+hotels-filters -> app -> Domain -> Service -> Strategy Factory -> OutputFormatStrategoy
 ```
-#### Edit OutputRepository.php
+#### Edit OutputStrategy.php
 
 ```php
 <?php
 
-class OutputRepository
+class OutputStrategy
 {
     protected $registeredOutputFormats = [
         JsonOutput::class,

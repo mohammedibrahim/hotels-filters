@@ -37,10 +37,21 @@ class JsonOutput extends AbstractOutputFormat
     public function output(): string
     {
         $dataMapper = new DataMapper;
+
         $output = [];
 
-        foreach($this->data['data'] as $row){
-            $output['data'][] = $dataMapper->extract($row);
+        $key = key($this->data);
+
+        if($key === 'data'){
+
+            $output[$key] = [];
+
+            foreach($this->data[$key] as $row){
+                $output[$key][] = $dataMapper->extract($row);
+            }
+
+        }else{
+            $output[$key] = $this->data[$key];
         }
 
         return json_encode($output,JSON_PRETTY_PRINT);

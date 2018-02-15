@@ -75,12 +75,6 @@ class AbstractRepository implements RepositoryContract
      */
     public function __construct(APIsClient $gateway, DataMapper $dataMapper, FilterService $filterService, OrderService $orderService)
     {
-        if (empty($this->entityClass)) {
-            throw new \RuntimeException(
-                get_class($this) . '::$entityClass is not defined'
-            );
-        }
-
         $this->gateway = $gateway;
 
         $this->dataMapper = $dataMapper;
@@ -98,22 +92,10 @@ class AbstractRepository implements RepositoryContract
     }
 
     /**
-     * All.
-     *
-     * @return RepositoryContract
-     * @throws \HotelsFilters\Domain\Exceptions\APIClientRequestException
-     */
-    public function all(): RepositoryContract
-    {
-        return $this;
-    }
-
-    /**
      * Where
      *
      * @param array $conditions
      * @return RepositoryContract
-     * @throws \HotelsFilters\Domain\Exceptions\APIClientRequestException
      * @throws \HotelsFilters\Domain\Exceptions\FilterNotFoundException
      */
     public function where(array $conditions): RepositoryContract
@@ -139,7 +121,6 @@ class AbstractRepository implements RepositoryContract
      * @param string $orderBy
      * @param string $orderType
      * @return RepositoryContract
-     * @throws \HotelsFilters\Domain\Exceptions\APIClientRequestException
      * @throws \HotelsFilters\Domain\Exceptions\OrderNotFoundException
      */
     public function order(string $orderBy, string $orderType): RepositoryContract
