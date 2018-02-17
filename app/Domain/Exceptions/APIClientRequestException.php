@@ -15,7 +15,7 @@ namespace HotelsFilters\Domain\Exceptions;
 /**
  * API Client Request exceptions.
  *
- * Class APIClientReuestException
+ * Class APIClientRequestException
  * @package HotelsFilters\Exceptions
  */
 class APIClientRequestException extends \Exception

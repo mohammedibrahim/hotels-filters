@@ -14,7 +14,6 @@ namespace HotelsFilters\Domain\Filters;
 use HotelsFilters\Domain\Contracts\FiltersContracts\AbstractFilter;
 use HotelsFilters\Domain\Exceptions\BadInputFormat;
 
-
 /**
  * Hotel Name Filter
  *

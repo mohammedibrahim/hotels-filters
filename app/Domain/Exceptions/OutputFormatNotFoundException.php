@@ -11,7 +11,6 @@
 
 namespace HotelsFilters\Domain\Exceptions;
 
-
 /**
  * Output Format Exceptions
  *

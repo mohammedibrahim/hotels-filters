@@ -18,7 +18,7 @@ use HotelsFilters\Domain\Filters\HotelNameFilter;
 use HotelsFilters\Domain\Filters\PriceRangeFilter;
 
 /**
- * ${DESC}
+ * Filter Strategy.
  *
  * Class FilterStrategy
  * @package HotelsFilters\Domain\Service\StrategyFactory

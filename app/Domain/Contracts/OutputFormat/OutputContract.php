@@ -13,7 +13,7 @@ namespace HotelsFilters\Domain\Contracts\OutputFormat;
 
 
 /**
- * Output Format style.
+ * Output Contract.
  *
  * Interface OutputContract
  * @package HotelsFilters\Contracts\OutputFormat

@@ -15,7 +15,7 @@ use GuzzleHttp\Client;
 use HotelsFilters\Domain\Exceptions\APIClientRequestException;
 
 /**
- * Web service client for retrive Hotels.
+ * Web service client for get Hotels.
  *
  * Class APIsClient
  * @package HotelsFilters\Http\APIs

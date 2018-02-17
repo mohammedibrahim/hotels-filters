@@ -15,7 +15,7 @@ use HotelsFilters\Domain\Service\OutputService;
 use HotelsFilters\Repositories\OutputRepository;
 
 /**
- * Response
+ * Response.
  *
  * Class Response
  * @package HotelsFilters\Http

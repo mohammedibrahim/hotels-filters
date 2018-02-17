@@ -699,8 +699,6 @@ At app root directory Run
 ```bash
 php vendor/bin/phpdoc -d app/ -t docs --title="Hotels Filters"
 ```
-In development progress.
-
 
 ## Test Cases
 

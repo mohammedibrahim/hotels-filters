@@ -74,6 +74,7 @@ class AbstractRepository implements RepositoryContract
      * @param DataMapper $dataMapper
      * @param FilterService $filterService
      * @param OrderService $orderService
+     * @throws \HotelsFilters\Domain\Exceptions\APIClientRequestException
      */
     public function __construct(APIsClient $gateway, DataMapper $dataMapper, FilterService $filterService, OrderService $orderService)
     {

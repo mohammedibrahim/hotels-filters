@@ -14,7 +14,7 @@ namespace HotelsFilters\Persistence\Http;
 use HotelsFilters\Domain\Contracts\Repository\HotelRepositoryContract;
 
 /**
- * Request.
+ * Hotel Controller.
  *
  * Class Request
  * @package HotelsFilters\Http
